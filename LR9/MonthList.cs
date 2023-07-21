@@ -8,6 +8,9 @@ namespace LR9
 {
     public class MonthList
     {
+        /// <summary>
+        /// Словарь с месяцами для того чтобы числовой формат месяца переводить в стринговый (для красивого формирования названий папок с месяцами в каталоге)
+        /// </summary>
         public static Dictionary<int, string> Month = new Dictionary<int, string>
         {
             {1, "January"},

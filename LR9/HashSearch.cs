@@ -11,10 +11,11 @@ namespace LR9
     /// <summary>
     /// Do search files from given folder by theit Hash
     /// </summary>
-    internal class HashSearch
+    public class HashSearch
     {
-        static string FindFileByHash(string folderPath, string hashToFind)
+        public static string FindFileByHash(string folderPath, string hashToFind)
         {
+            
             // Ищем файлы в текущей папке
             string[] files = Directory.GetFiles(folderPath);
             foreach (string file in files)
@@ -28,6 +29,7 @@ namespace LR9
 
                         if (fileHash.Equals(hashToFind))
                         {
+
                             return file; // Возвращаем путь к найденному файлу
                         }
                     }
