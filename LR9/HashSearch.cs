@@ -38,6 +38,7 @@ namespace LR9
 
             // Рекурсивно ищем файл по хэшу в подпапках
             string[] subfolders = Directory.GetDirectories(folderPath);
+
             foreach (string subfolder in subfolders)
             {
                 string filePath = FindFileByHash(subfolder, hashToFind);

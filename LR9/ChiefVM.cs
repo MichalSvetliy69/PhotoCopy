@@ -48,27 +48,29 @@ namespace LR9
            
             foreach (string extension in extensions) // пройдемся по всем расширениям из списка
             {
-                string[] imageFiles = Directory.GetFiles(sourceDirectory, extension);
+                string[] imageFiles = Directory.GetFiles(sourceDirectory, extension);  // массив строк с полным путем к исходным файлам для обращения к ним
 
-                foreach (string imageFile in imageFiles) //проходка по всем файлам
+                foreach (string imageFile in imageFiles) //проходка по всем исходным файлам
                 {
                     #region CREATEPATHTOSAVE
                     // Получаем дату создания файла
-                    DateTime creationDate = File.GetCreationTime(imageFile);
+                    DateTime creationDate = File.GetCreationTime(imageFile); 
 
                     // Создаем папку в папке назначения, если она не существует
                     string destinationSubDirectory = Path.Combine(destinationDirectory, $"{creationDate.ToString("yyy")}\\{MonthList.Month[Convert.ToInt32(creationDate.ToString("MM"))]}\\{creationDate.ToString("dd")}");
                     Directory.CreateDirectory(destinationSubDirectory);
 
-                    // Формируем путь для сохранения файла
+                    // Формируем путь для сохранения файла (контрольный путь + название файла)
                     string destinationPath = Path.Combine(destinationSubDirectory, Path.GetFileName(imageFile));
 
                     #endregion
 
+
+                    //хешируем исходный файл в переменную fileHash (для дальнейшего сравнения ее с хешами файлов в новой папке для поиска копий)
                     string fileHash;
                     using (var md5 = MD5.Create())
                     {
-                        using (var stream = File.OpenRead(destinationPath))
+                        using (var stream = File.OpenRead(imageFile))
                         {
                             byte[] hash = md5.ComputeHash(stream);
                             fileHash = BitConverter.ToString(hash).Replace("-", "").ToLower();
