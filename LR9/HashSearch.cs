@@ -17,7 +17,7 @@ namespace LR9
         {
             
             // Ищем файлы в текущей папке
-            string[] files = Directory.GetFiles(folderPath);
+            string[] files = Directory.GetFiles(folderPath,"*", SearchOption.AllDirectories);;
             foreach (string file in files)
             {
                 using (var md5 = MD5.Create())
@@ -37,16 +37,16 @@ namespace LR9
             }
 
             // Рекурсивно ищем файл по хэшу в подпапках
-            string[] subfolders = Directory.GetDirectories(folderPath);
+            //string[] subfolders = Directory.GetDirectories(folderPath);
 
-            foreach (string subfolder in subfolders)
-            {
-                string filePath = FindFileByHash(subfolder, hashToFind);
-                if (!string.IsNullOrEmpty(filePath))
-                {
-                    return filePath; // Возвращаем путь к найденному файлу из подпапки
-                }
-            }
+            //foreach (string subfolder in subfolders)
+            //{
+            //    string filePath = FindFileByHash(subfolder, hashToFind);
+            //    if (!string.IsNullOrEmpty(filePath))
+            //    {
+            //        return filePath; // Возвращаем путь к найденному файлу из подпапки
+            //    }
+            //}
 
             return null; // Файл не найден
         }

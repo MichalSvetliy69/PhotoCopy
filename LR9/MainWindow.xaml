@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LR9"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="400"
+        Title="MainWindow" Height="450" Width="700"
     ResizeMode="NoResize">
 
     <Window.Resources>
@@ -26,14 +26,20 @@
             <ImageBrush ImageSource="/Backgrounds_____The_ivy_on_the_wooden_floor_091830_.jpg" TileMode="None"/>
         </Grid.Background>
 
-        <TextBlock HorizontalAlignment="Left" Margin="40,50,0,0" TextWrapping="Wrap" Text="Path to source photos" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Snap ITC" FontWeight="Bold" Height="45" Width="350"/>
-        <TextBox HorizontalAlignment="Center" Margin="0,100,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="350"/>
-        <TextBlock HorizontalAlignment="Left" Margin="79,141,0,0" TextWrapping="Wrap" Text="Path to copy" VerticalAlignment="Top" Foreground="White" FontFamily="Broadway" Height="59" Width="350" FontSize="36"/>
-        <TextBox HorizontalAlignment="Center" Margin="0,200,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="350"/>
-        <Button HorizontalAlignment="Center"  Margin="0,309,0,59"  Width="170" Content="GO" FontSize="24" FontWeight="Bold" FontFamily="Arial Black" Command="{Binding AddCommand}" />
-        <TextBlock HorizontalAlignment="Left" Text="successful complete!" Margin="115,260,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="350" Foreground="#FF13FF00" FontSize="18" FontFamily="Franklin Gothic Heavy"/>
+        <TextBlock HorizontalAlignment="Left" Margin="26,50,0,0" TextWrapping="Wrap" Text="Path to source photos" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Snap ITC" FontWeight="Bold" Height="45" Width="350"/>
+        <TextBlock HorizontalAlignment="Left" Margin="440,48,0,0" TextWrapping="Wrap" Text="Sort parameter" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Snap ITC" FontWeight="Bold" Height="45" Width="350"/>
+        <ComboBox Margin="440,95,140,291">
+            <ComboBoxItem>Day</ComboBoxItem>
+            <ComboBoxItem>Week</ComboBoxItem>
+            <ComboBoxItem>Month</ComboBoxItem>
+        </ComboBox>
+        <TextBox HorizontalAlignment="Left" Margin="26,95,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="350"/>
+        <TextBlock HorizontalAlignment="Left" Margin="26,136,0,0" TextWrapping="Wrap" Text="Path to copy" VerticalAlignment="Top" Foreground="White" FontFamily="Broadway" Height="59" Width="350" FontSize="36" RenderTransformOrigin="0.3,0.534"/>
+        <TextBox HorizontalAlignment="Left" Margin="26,195,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="350"/>
+        <Button HorizontalAlignment="Center"  Margin="0,331,0,37"  Width="170" Content="GO" FontSize="24" FontWeight="Bold" FontFamily="Arial Black" Command="{Binding AddCommand}" />
+        <TextBlock HorizontalAlignment="Left" Text="successful complete!" Margin="265,292,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="350" Foreground="#FF13FF00" FontSize="18" FontFamily="Franklin Gothic Heavy"/>
 
     </Grid>
 
-    
+
 </Window>
